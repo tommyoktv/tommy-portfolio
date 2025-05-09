@@ -3,36 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Tommy's Portfolio - Web Developer & UI/UX Designer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Tommy, a web developer and UI/UX designer specializing in modern, responsive websites and user-friendly interfaces.">
+    <meta name="keywords" content="web developer, UI designer, UX designer, portfolio, HTML, CSS, JavaScript, responsive design">
+    <meta name="author" content="Tommy">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Tommy's Portfolio - Web Developer & UI/UX Designer">
+    <meta property="og:description" content="Portfolio of Tommy, a web developer and UI/UX designer specializing in modern, responsive websites.">
+    <meta property="og:image" content="https://tommyoktv.github.io/portfolio/images/tommy-photo.jpg">
+    <meta property="og:url" content="https://tommyoktv.github.io/portfolio">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tommyoktv.github.io/portfolio">
+    
+    <!-- Existing CSS and JS -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/scroll.js" defer></script>
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Tommy",
+        "url": "https://tommyoktv.github.io/portfolio",
+        "sameAs": [
+            "https://github.com/tommyoktv",
+            "https://www.linkedin.com/in/tommy-oktavianto-114496187/",
+            "https://instagram.com/tommyoktv"
+        ],
+        "jobTitle": "Web Developer",
+        "description": "Web Developer & UI/UX Designer specializing in modern, responsive websites"
+    }
+    </script>
 </head>
 <body>
+    <div id="top"></div>
     <nav class="navbar">
-        <div class="nav-brand">Portfolio</div>
+        <a href="#top" class="nav-brand">Tommy's Portfolio</a>
         <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" data-tooltip="Back to Top">Home</a></li>
+            <li><a href="#about" data-tooltip="Learn about me">About</a></li>
+            <li class="dropdown">
+                <a href="#work" data-tooltip="View my projects">Work</a>
+                <div class="dropdown-content">
+                    <a href="projects/portfolio.html">Portfolio</a>
+                    <a href="projects/blog.html">Blog</a>
+                </div>
+            </li>
+            <li><a href="#contact" data-tooltip="Get in touch">Contact</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Creative Developer & Designer</p>
+        <div class="slider">
+            <div class="slide">
+                <img src="images/bg1.jpg" alt="Background 1">
+            </div>
+            <div class="slide">
+                <img src="images/bg2.jpg" alt="Background 2">
+            </div>
+            <div class="slide">
+                <img src="images/bg3.jpg" alt="Background 3">
+            </div>
+            <button type="button" class="slider-nav prev">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+            <button type="button" class="slider-nav next">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                </svg>
+            </button>
+            <div class="slider-dots"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Welcome to Tommy's Portfolio</h1>
+            <p>Web Developer & UI/UX Designer</p>
+        </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <img src="images/profile.jpg" alt="Profile">
+                <img src="images/tommy-photo.jpg" alt="Tommy">
                 <div class="about-text">
-                    <p>Your description here</p>
+                    <h3 class="about-name">Tommy Oktavianto</h3>
+                    <p>Hi! I'm Tommy. I'm a passionate developer focusing on creating modern and user-friendly websites. Currently exploring web development and UI/UX design.</p>
                     <div class="skills">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                        <a href="https://en.wikipedia.org/wiki/HTML" target="_blank"><span>HTML</span></a>
+                        <a href="https://en.wikipedia.org/wiki/CSS" target="_blank"><span>CSS</span></a>
+                        <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"><span>JavaScript</span></a>
+                        <a href="https://en.wikipedia.org/wiki/User_interface_design" target="_blank"><span>UI/UX Design</span></a>
                     </div>
                 </div>
             </div>
@@ -41,17 +110,19 @@
 
     <section id="work" class="work">
         <div class="container">
-            <h2>Featured Work</h2>
+            <h2>My Projects</h2>
             <div class="work-grid">
                 <div class="work-item">
-                    <img src="images/project1.jpg" alt="Project 1">
-                    <h3>Project One</h3>
-                    <p>Project description here</p>
+                    <img src="images/project1.jpg" alt="Portfolio Website">
+                    <h3>Portfolio Website</h3>
+                    <p>A modern portfolio website built with HTML, CSS, and JavaScript</p>
+                    <a href="projects/portfolio.html" class="project-link">View Project</a>
                 </div>
                 <div class="work-item">
-                    <img src="images/project2.jpg" alt="Project 2">
-                    <h3>Project Two</h3>
-                    <p>Project description here</p>
+                    <img src="images/project2.jpg" alt="Blog Website">
+                    <h3>Personal Blog</h3>
+                    <p>A personal blog to share my coding journey</p>
+                    <a href="projects/blog.html" class="project-link">View Project</a>
                 </div>
             </div>
         </div>
@@ -59,19 +130,18 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get in Touch</h2>
+            <h2>Contact Me</h2>
             <div class="contact-info">
-                <a href="mailto:your@email.com">Email Me</a>
-                <a href="https://github.com/yourusername">GitHub</a>
-                <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+                <a href="mailto:mtommyon@gmail.com" class="social-link">Email</a>
+                <a href="https://wa.me/6281220995228" class="social-link">WhatsApp</a>
+                <a href="https://www.linkedin.com/in/tommy-oktavianto-114496187/" class="social-link">LinkedIn</a>
+                <a href="https://instagram.com/tommyoktv" class="social-link">Instagram</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Tommy. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
